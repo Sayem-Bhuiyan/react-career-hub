@@ -2,8 +2,7 @@ import sayem from "../../assets/sayem-removebg-preview.png";
 
 const Hero = () => {
   return (
-    <div className="hero h-[500px] bg-base-200 rounded-3xl mb-10">
-      <div className="hero-content flex-col lg:flex-row-reverse bg-base-200 justify-between">
+    <div className=" flex flex-col md:flex-row-reverse justify-between items-center">
         <img
           src={sayem}
           className="max-w-sm rounded-lg shadow-2xl bg-base-200"
@@ -19,7 +18,6 @@ const Hero = () => {
           <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-extrabold text-xl ">Get Started</button>
         </div>
       </div>
-    </div>
   );
 };
 
