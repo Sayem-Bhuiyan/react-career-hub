@@ -1,8 +1,37 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const navMenu = (
+    <div className="flex flex-col md:flex-row gap-5 text-base font-medium">
+      <NavLink
+        to="/statistics"
+        className={({ isActive }) =>
+          isActive ? "text-[#7E90FE]" : "text-[#757575]"
+        }
+      >
+        Statistics
+      </NavLink>
+      <NavLink
+        to="/applied_jobs"
+        className={({ isActive }) =>
+          isActive ? "text-[#7E90FE]" : "text-[#757575]"
+        }
+      >
+        Applied Jobs
+      </NavLink>
+      <NavLink
+        to="/blogs"
+        className={({ isActive }) =>
+          isActive ? "text-[#7E90FE]" : "text-[#757575]"
+        }
+      >
+        Blogs
+      </NavLink>
+    </div>
+  );
+
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar my-5 md:my-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,36 +54,18 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <NavLink to="/statistics">Statistics</NavLink>
-            </li>
-            <li>
-              <NavLink to="/applied_jobs">Applied Jobs</NavLink>
-            </li>
-            <li>
-              <NavLink to="/blogs">Blogs</NavLink>
-            </li>
+            {navMenu}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
+        <a className="text-[#474747] font-extrabold text-2xl">
           <NavLink to="/">CareerHub</NavLink>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <NavLink to="/statistics">Statistics</NavLink>
-          </li>
-          <li>
-            <NavLink to="/applied_jobs">Applied Jobs</NavLink>
-          </li>
-          <li>
-            <NavLink to="/blogs">Blogs</NavLink>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navMenu}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link to='/applied_jobs' className="text-xl font-extrabold text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF] px-6 py-4 rounded-xl">Start Applying</Link>
       </div>
     </div>
   );
