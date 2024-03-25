@@ -4,7 +4,7 @@ const Navbar = () => {
   const navMenu = (
     <div className="flex flex-col md:flex-row gap-5 text-base font-medium">
       <NavLink
-        to="/statistics"
+        to="/"
         className={({ isActive }) =>
           isActive ? "text-[#7E90FE]" : "text-[#757575]"
         }
