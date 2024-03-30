@@ -5,6 +5,7 @@ import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { MdSubtitles, MdOutlineMailOutline, MdLocationOn  } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { saveToLS } from "../../localStorage";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -24,6 +25,9 @@ const JobDetails = () => {
   const { phone, email, address } = contact_information;
   return (
     <div className="mb-20">
+      <Helmet>
+        <title>Career Hub | Job Details</title>
+      </Helmet>
       <div className="relative h-[200px] flex justify-center items-center mb-10">
         <h2 className="text-center text-[#1A1919] font-extrabold text-[32px] ">
           Job Details
